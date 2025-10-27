@@ -1,8 +1,8 @@
 # streamlit_app.py
 import streamlit as st
 
-st.set_page_config(page_title="My Quiz", page_icon="🧠")
-st.title("🧠 My Interactive Quiz")
+st.set_page_config(page_title="College Corp Quiz", page_icon="🧠")
+st.title("Welcome to the College Corps Interactive Quiz!")
 
 # --- Example structure: replace with your own quiz data/logic ---
 if "i" not in st.session_state:
@@ -14,6 +14,7 @@ if "i" not in st.session_state:
 questions = [
     {"q": "What is 2 + 2?", "choices": ["3","4","5"], "ans": "4"},
     {"q": "Which is a mammal?", "choices": ["Shark","Dolphin","Eagle"], "ans": "Dolphin"},
+    {"q": "Which of these planets is the hottest?", "choices": ["Mercury", "Venus", "Mars", "Jupiter"], "ans": "Venus"},
 ]
 
 def show_question(idx):
