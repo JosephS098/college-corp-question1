@@ -1,45 +1,30 @@
-# streamlit_app.py
 import streamlit as st
 
-st.set_page_config(page_title="College Corp Quiz", page_icon="🧠")
-st.title("Welcome to the College Corps Interactive Quiz!")
+st.set_page_config(page_title="Quiz Question 1", page_icon="🧠")
 
-# --- Example structure: replace with your own quiz data/logic ---
-if "i" not in st.session_state:
-    st.session_state.i = 0
-    st.session_state.score = 0
-    st.session_state.done = False
+st.title("🧩 Interactive Quiz")
 
-# Replace this list with your real questions/answers
-questions = [
-    {"q": "What is 2 + 2?", "choices": ["3","4","5"], "ans": "4"},
-    {"q": "Which is a mammal?", "choices": ["Shark","Dolphin","Eagle"], "ans": "Dolphin"},
-    {"q": "Which of these planets is the hottest?", "choices": ["Mercury", "Venus", "Mars", "Jupiter"], "ans": "Venus"},
-]
+# --- Your question here ---
+question = "What is 5 + 3?"
+choices = ["6", "7", "8", "9"]
+correct_answer = "8"
 
-def show_question(idx):
-    q = questions[idx]
-    st.subheader(q["q"])
-    choice = st.radio("Choose one:", q["choices"], index=None, key=f"q{idx}")
-    submitted = st.button("Submit", key=f"submit{idx}", disabled=choice is None)
-    if submitted:
-        if choice == q["ans"]:
-            st.session_state.score += 1
-            st.success("Correct!")
-        else:
-            st.error(f"Incorrect. Answer: {q['ans']}")
-        st.session_state.i += 1
-        st.rerun()
+# --- Use Streamlit session state to remember progress ---
+if "answered_correctly" not in st.session_state:
+    st.session_state.answered_correctly = False
 
-if not st.session_state.done:
-    if st.session_state.i < len(questions):
-        show_question(st.session_state.i)
+st.subheader(question)
+user_choice = st.radio("Choose your answer:", choices, index=None)
+
+# Only show feedback when they click the button
+if st.button("Submit"):
+    if user_choice == correct_answer:
+        st.session_state.answered_correctly = True
+        st.success("✅ Correct! Great job!")
     else:
-        st.session_state.done = True
-        st.rerun()
-else:
-    st.header("Results")
-    st.write(f"Score: **{st.session_state.score}/{len(questions)}**")
-    if st.button("Restart"):
-        st.session_state.clear()
-        st.rerun()
+        st.warning("❌ Try again!")
+
+# When they finally get it right
+if st.session_state.answered_correctly:
+    st.balloons()
+    st.info("You can close this quiz or move on to the next QR code!")
