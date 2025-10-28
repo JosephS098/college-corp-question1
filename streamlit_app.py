@@ -1,7 +1,6 @@
 import streamlit as st
 
 st.set_page_config(page_title="QR Code Quiz", page_icon="🧠")
-[theme]
 primaryColor="#F63366"
 backgroundColor="#FFFFFF"
 secondaryBackgroundColor="#F0F2F6"
