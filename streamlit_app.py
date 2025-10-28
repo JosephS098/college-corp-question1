@@ -3,13 +3,6 @@ import streamlit as st
 st.set_page_config(page_title="QR Code Quiz", page_icon="🧠")
 
 st.title("🧩 Interactive College Corp Quiz")
-[theme]
-primaryColor="#F63366"
-backgroundColor="#FFFFFF"
-secondaryBackgroundColor="#F0F2F6"
-textColor="#262730"
-font="sans serif"
-
 
 question = "What is 5 + 3?"
 choices = ["6", "7", "8", "9"]
@@ -33,4 +26,5 @@ if st.button("Submit"):
 
 if st.session_state.answered_correctly:
     st.balloons()
+    st.snow()
     st.info("You can close this quiz or move on to the next QR code!")
