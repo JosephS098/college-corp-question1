@@ -1,6 +1,13 @@
 import streamlit as st
 
 st.set_page_config(page_title="QR Code Quiz", page_icon="🧠")
+[theme]
+primaryColor="#F63366"
+backgroundColor="#FFFFFF"
+secondaryBackgroundColor="#F0F2F6"
+textColor="#262730"
+font="sans serif"
+
 
 st.title("🧩 Interactive College Corp Quiz")
 st.markdown("<h3 style='color:#4CAF50;'>Let's see if you can solve this!</h3>", unsafe_allow_html=True)
