@@ -1,9 +1,9 @@
 import streamlit as st
 
-st.set_page_config(page_title="QR Code Quiz", page_icon="🧠")
+st.set_page_config(page_title="QR Code Quiz 1", page_icon="🧠")
 
 
-st.title("🧩 Interactive College Corp Quiz")
+st.title("🧩 Interactive College Corp Quiz!")
 st.markdown("<h3 style='color:#4CAF50;'>Let's see if you can solve this!</h3>", unsafe_allow_html=True)
 question = "When was the College Corps Launched?"
 choices = ["2019", "2020", "2021", "2022"]
