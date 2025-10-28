@@ -4,9 +4,9 @@ st.set_page_config(page_title="QR Code Quiz", page_icon="🧠")
 
 st.title("🧩 Interactive College Corp Quiz")
 
-question = "What is 5 + 3?"
-choices = ["6", "7", "8", "9"]
-correct_answer = "8"
+question = "When was the College Corps Launched?"
+choices = ["2019", "2020", "2021", "2022"]
+correct_answer = "2021"
 
 
 if "answered_correctly" not in st.session_state:
