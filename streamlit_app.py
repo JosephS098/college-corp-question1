@@ -27,4 +27,4 @@ if st.button("Submit"):
 
 if st.session_state.answered_correctly:
     st.balloons()
-    st.info("Find Facilitator for next clue!")
+    st.info("Show to Facilitator for next clue!")
